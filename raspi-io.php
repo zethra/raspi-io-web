@@ -10,7 +10,7 @@ if($arg1 == "mode")
 	{
 		try
 		{
-			echo exec('gpio mode ' . $arg2 . ' in');
+			exec('gpio mode ' . $arg2 . ' in');
 		}
 		catch(Exception $e)
 		{
@@ -21,7 +21,7 @@ if($arg1 == "mode")
 	{
 		try
 		{
-			echo exec('gpio mode ' . $arg2 . ' out');
+			exec('gpio mode ' . $arg2 . ' out', $status);
 		}
 		catch(Exception $e)
 		{
@@ -32,19 +32,23 @@ if($arg1 == "mode")
 	{
 		try
 		{
-			echo exec('gpio mode ' . $arg2 . ' pwm');
+			exec('gpio mode ' . $arg2 . ' pwm');
 		}
 		catch(Exception $e)
 		{
 			echo 'Caught exception: ',  $e->getMessage(), "\n";
 		}
 	}
+	else
+	{
+		echo 'invalid mode';
+	}
 }
 elseif($arg1 == "write")
 {
 	try
 	{
-		echo exec('gpio write ' . $arg2 . ' ' . $arg3);
+		exec('gpio write ' . $arg2 . ' ' . $arg3);
 	}
 	catch(Exception $e)
 	{
@@ -55,7 +59,8 @@ elseif($arg1 == "read")
 {
 	try
 	{
-		echo exec('gpio read' . $arg2);
+		exec('gpio read ' . $arg2, $status);
+		echo $status[0];
 	}
 	catch(Exception $e)
 	{
@@ -66,7 +71,7 @@ elseif($arg1 == "pwm")
 {
 	try
 	{
-		echo exec('gpio pwm ' . $arg2 . ' ' . $arg3);
+		exec('gpio pwm ' . $arg2 . ' ' . $arg3);
 	}
 	catch(Exception $e)
 	{
