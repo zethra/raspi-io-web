@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>raspi-io</title>
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="raspi-io.js"></script>
+<script type="text/javascript" src="raspi-io-ui.js"></script>
+</head>
+
+<body>
+<button id="25">25</button>
+<style>
+button{
+	background:#FFFFFF;
+	color:#E01014;
+}
+</style>
+<script type="text/javascript">
+gpio.ui.set("#25","background","25","orange","white");
+setInterval(gpio.ui.update, 100);
+</script>
+</body>
+</html>
