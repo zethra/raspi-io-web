@@ -1,8 +1,21 @@
 var val;
 function io(cmd, arg1, arg2)
 {
-	if(cmd == "mode" || cmd == "write" || cmd == "pwm")
+	if(cmd == "mode" || cmd == "pwm")
 	{
+		var iourl = "raspi-io.php?1=" + cmd + "&2=" + arg1 + "&3=" + arg2;
+	}
+	if(cmd == "write")
+	{
+		if (arg2 == true)
+		{
+			arg2 = "1";
+		}
+		else if (arg2 == false)
+		{
+			arg2 = "0";
+		}
+		console.log(arg2);
 		var iourl = "raspi-io.php?1=" + cmd + "&2=" + arg1 + "&3=" + arg2;
 	}
 	else if(cmd == "read")
@@ -46,6 +59,10 @@ var gpio =
 		{
 			console.log("pin " + x + ": " + gpio.read(x));
 		}
+	},
+	toggle : function (pin)
+	{
+		gpio.write(pin, !(gpio.read(pin)))
 	}
 };
 cake = gpio.read(25);
