@@ -1,4 +1,8 @@
 var val;
+function update()
+{
+	
+}
 function io(cmd, arg1, arg2)
 {
 	if(cmd == "mode" || cmd == "pwm")
@@ -55,7 +59,7 @@ var gpio =
 	},
 	readall : function ()
 	{
-		for (x = 1; x = 25; x++)
+		for (x = 1; x <= 25; x++)
 		{
 			console.log("pin " + x + ": " + gpio.read(x));
 		}
