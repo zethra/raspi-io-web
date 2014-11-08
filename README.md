@@ -15,6 +15,7 @@ Required Software:
 *_Requires internet connection_
 ###Apach and PHP
 This is the web server the code runs on<br>
+*_Any webserver that suppoprts PHP should work_<br>
 To install type the following into the terminal:
 ```bash
 sudo apt-get install apache2 php5 libapache2-mod-php5
@@ -42,6 +43,24 @@ To test if it is installed correctly type:
 gpio readall
 ```
 If a table of the gpios comes back it is installed correctly.
+
+###RasPi-IO and JQuery
+Now you will need to copy the necesary files to the web root of your server.
+To install type the following into the terminal:
+```bash
+cd ~
+git clone https://github.com/zethra/raspi-io-web.git
+cd raspi-io-web
+sudo cp jquery-2.1.1.min.js /var/www/jquery-2.1.1.min.js && sudo cp raspi-io.php /var/www/raspi-io.js && sudo cp raspi-io.js /var/www/raspi-io.js
+```
+If you want to use the debug library also enter:
+```bash
+sudo cp raspi-io-debug.js /var/www/raspi-io-debug.js
+```
+I also recomend copying the `example.html` file to test if everything is working
+```bash
+sudo cp example.html /var/www/example.html
+```
 #Usage
 ##Basic
 Place raspi-ip.js and raspi-io.php in the same folde in the website directory.  Link raspi-io.js to your html page after jquery *_note i have tested the library with jquery version 2.1.1_.
