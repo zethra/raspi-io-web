@@ -38,7 +38,7 @@ cd wiringPi
 ./build -lwiringpi
 ```
 To test if it is installed correctly type:
-```
+```bash
 gpio readall
 ```
 If a table of the gpios comes back it is installed correctly.
