@@ -1,4 +1,4 @@
- var on = "#F3A514";
+var on = "#F3A514";
 var off = "#ffffff"
 
 var elements = [];
@@ -8,7 +8,7 @@ var oncolors = [];
 var offcolors = [];
 var pos = 0;
 
-gpio.ui =
+window.gpio.ui =
 {
 	set : function (element, attribute, pin, oncolor, offcolor)
 	{
@@ -65,5 +65,5 @@ gpio.ui =
 		}
 	}
 }
-
-//console.log(gpio.read(25));
+gpio.set = "hello"
+console.log("h");

@@ -3,21 +3,72 @@
 <head>
 <meta charset="utf-8">
 <title>raspi-io</title>
-<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="raspi-io.js"></script>
-<script type="text/javascript" src="raspi-io-ui.js"></script>
 </head>
 
 <body>
-<button id="25" onClick="gpio.toggle(25);">25</button>
+<table>
+	<tr>
+		<td><button id="1" onClick="gpio.toggle(1)">1</button></td>
+        <td><button id="2" onClick="gpio.toggle(2)">2</button></td>
+    </tr>
+    <tr>
+        <td><button id="3" onClick="gpio.toggle(3)">3</button></td>
+        <td><button id="4" onClick="gpio.toggle(4)">4</button></td>
+	</tr>
+     <tr>
+        <td><button id="5" onClick="gpio.toggle(5)">5</button></td>
+        <td><button id="6" onClick="gpio.toggle(6)">6</button></td>
+	</tr>
+     <tr>
+        <td><button id="7" onClick="gpio.toggle(7)">7</button></td>
+        <td><button id="8" onClick="gpio.toggle(8)">8</button></td>
+	</tr>
+     <tr>
+        <td><button id="9" onClick="gpio.toggle(9)">9</button></td>
+        <td><button id="10" onClick="gpio.toggle(10)">10</button></td>
+	</tr>
+     <tr>
+        <td><button id="11" onClick="gpio.toggle(11)">11</button></td>
+        <td><button id="12" onClick="gpio.toggle(12)">12</button></td>
+	</tr>
+    <tr>
+        <td><button id="13" onClick="gpio.toggle(13)">13</button></td>
+        <td><button id="14" onClick="gpio.toggle(14)">14</button></td>
+	</tr>
+    <tr>
+        <td><button id="15" onClick="gpio.toggle(15)">15</button></td>
+        <td><button id="16" onClick="gpio.toggle(16)">16</button></td>
+	</tr>
+    <tr>
+        <td><button id="17" onClick="gpio.toggle(17)">17</button></td>
+        <td><button id="18" onClick="gpio.toggle(18)">18</button></td>
+	</tr>
+    <tr>
+        <td><button id="19" onClick="gpio.toggle(19)">19</button></td>
+        <td><button id="20" onClick="gpio.toggle(20)">20</button></td>
+	</tr>
+    <tr>
+        <td><button id="21" onClick="gpio.toggle(21)">21</button></td>
+        <td><button id="22" onClick="gpio.toggle(22)">22</button></td>
+	</tr>
+    <tr>
+        <td><button id="23" onClick="gpio.toggle(23)">23</button></td>
+        <td><button id="24" onClick="gpio.toggle(24)">24</button></td>
+	</tr>
+    <tr>
+        <td><button id="25" onClick="gpio.toggle(25)">25</button></td>
+        <td><button id="26" onClick="gpio.toggle(26)">26</button></td>
+	</tr>
+</table>
 <style>
-button{
-	background:#FFFFFF;
-	color:#E01014;
-}
+button{width:30px;height:30px;}
 </style>
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="raspi-io-debug.js"></script>
+
 <script type="text/javascript">
-gpio.ui.set("#25","background","25","orange","white");
+gpio.debug.nopi([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26], [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]);
+gpio.ui.set(['#1','#2','#3','#4','#5','#6','#7','#8','#9','#10','#11','#12','#13','#14','#15','#16','#17','#18','#19','#20','#21','#22','#23','#24','#25','#26'],"background",[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],"orange","white");
 setInterval(gpio.ui.update, 100);
 </script>
 </body>
