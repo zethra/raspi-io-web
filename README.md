@@ -63,7 +63,7 @@ sudo cp example.html /var/www/example.html
 ```
 #Usage
 ##Basic
-Place raspi-ip.js and raspi-io.php in the same folde in the website directory.  Link raspi-io.js to your html page after jquery *_note i have tested the library with jquery version 2.1.1_.
+Place `raspi-ip.js` and `raspi-io.php` in the same folde in the website directory.  Link raspi-io.js to your html page after jquery *_note i have tested the library with jquery version 2.1.1_.
 
 ####Mode
 To set the mode of a pin use the syntax: 
